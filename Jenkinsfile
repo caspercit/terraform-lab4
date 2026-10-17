@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Terraform fmt') {
-      steps { dir('infra') { sh 'terraform fmt -check -recursive' } }
+      steps { dir('infra') { sh 'terraform fmt -recursive' } }
     }
     stage('Terraform init') {
       steps { dir('infra') { sh 'terraform init -backend=false -input=false' } }

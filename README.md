@@ -40,6 +40,7 @@ az login
 az account list --output table
 az account set --subscription "TU-SUSCRIPCION"
 terraform init
+terraform fmt -recursive
 terraform fmt -check -recursive
 terraform validate
 terraform plan -out=practica.tfplan

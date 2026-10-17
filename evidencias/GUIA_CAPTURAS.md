@@ -6,7 +6,7 @@ Adjunta capturas con fecha y legibilidad. No inventes ejecuciones.
 |---|---|---|
 | 01-version.png | terraform version y az --version | Pendiente |
 | 02-init.png | terraform init exitoso | Pendiente |
-| 03-validate.png | terraform validate | Pendiente |
+| 03-validate.png | terraform fmt -recursive y terraform validate | Pendiente |
 | 04-plan.png | terraform plan -out=practica.tfplan | Pendiente |
 | 05-apply.png | terraform apply practica.tfplan | Pendiente |
 | 06-output.png | terraform output | Pendiente |
