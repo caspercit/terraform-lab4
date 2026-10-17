@@ -28,7 +28,7 @@ resource "azurerm_postgresql_flexible_server" "main" {
   depends_on                    = [azurerm_private_dns_zone_virtual_network_link.postgresql]
   lifecycle {
     precondition {
-      condition     = var.admin_password != null && length(coalesce(var.admin_password, "")) >= 8
+      condition     = var.admin_password != null ? length(var.admin_password) >= 8 : false
       error_message = "Para PostgreSQL, configura TF_VAR_postgres_admin_password con al menos 8 caracteres."
     }
   }

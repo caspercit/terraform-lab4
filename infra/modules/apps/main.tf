@@ -18,7 +18,9 @@ resource "azurerm_linux_web_app" "web" {
     always_on           = false
     minimum_tls_version = "1.2"
     ftps_state          = "Disabled"
-    application_stack { node_version = var.node_version }
+    application_stack {
+      node_version = var.node_version
+    }
   }
   app_settings = merge(
     { "SCM_DO_BUILD_DURING_DEPLOYMENT" = "true" },
