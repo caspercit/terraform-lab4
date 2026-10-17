@@ -1,0 +1,27 @@
+# Copiar como terraform.tfvars. NO subir este ultimo a Git.
+# Puedes omitir la siguiente linea y exportar ARM_SUBSCRIPTION_ID en tu terminal.
+subscription_id = "REEMPLAZAR-CON-TU-ID-DE-SUSCRIPCION"
+project_name    = "cafesoft"
+environment     = "qa"
+location        = "mexicocentral"
+instance        = "001"
+unique_suffix   = "cambia01" # REEMPLAZAR, nombre global unico
+
+# Modo basico por defecto: red + Storage, sin aplicaciones ni PostgreSQL.
+enable_storage    = true
+enable_monitoring = false
+enable_apps       = false
+enable_database   = false
+
+# Para arquitectura extendida (con cargos), cambiar a true los tres ultimos.
+app_service_sku = "B1"
+node_version    = "24-lts"
+java_version    = "17"
+postgres_sku    = "B_Standard_B1ms"
+postgres_version = "16"
+
+# Si habilitas PostgreSQL: define TF_VAR_postgres_admin_password fuera de este archivo.
+tags = {
+  owner       = "equipo-cafesoft"
+  cost_center = "practica-academica"
+}
